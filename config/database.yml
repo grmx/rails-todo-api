@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+
+development:
+  <<: *default
+  database: rails_todo_api_development
+
+test:
+  <<: *default
+  database: rails_todo_api_test
+
+production:
+  <<: *default
+  database: rails_todo_api_production
+  username: rails_todo_api
+  password: <%= ENV['RAILS_TODO_API_DATABASE_PASSWORD'] %>
