@@ -1,0 +1,40 @@
+PreCommit:
+  ALL:
+    on_warn: fail
+
+  Brakeman:
+    enabled: true
+
+  BundleCheck:
+    enabled: true
+
+  Fasterer:
+    enabled: true
+
+  HardTabs:
+    enabled: true
+
+  RailsBestPractices:
+    enabled: true
+
+  RailsSchemaUpToDate:
+    enabled: true
+
+  Reek:
+    enabled: true
+
+  RuboCop:
+    enabled: true
+
+  YamlSyntax:
+    enabled: true
+
+PrePush:
+  ALL:
+    on_warn: fail
+
+  BundleInstall:
+    enabled: true
+
+  RSpec:
+    enabled: true
