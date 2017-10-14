@@ -1,0 +1,26 @@
+AllCops:
+  Exclude:
+    - bin/**/*
+    - config/application.rb
+    - config/boot.rb
+    - config/environments/*
+    - config/puma.rb
+    - config/spring.rb
+    - db/schema.rb
+    - lib/**/*
+    - script/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - Rakefile
+    - Gemfile
+    - spec/**/*
+  TargetRubyVersion: 2.4
+
+FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Style/Documentation:
+  Enabled: false
