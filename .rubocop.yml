@@ -3,9 +3,10 @@ AllCops:
     - bin/**/*
     - config/application.rb
     - config/boot.rb
-    - config/environments/*
+    - config/environments/**/*
     - config/puma.rb
     - config/spring.rb
+    - db/migrate/**/*
     - db/schema.rb
     - lib/**/*
     - script/**/*
