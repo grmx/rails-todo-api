@@ -22,6 +22,7 @@ PreCommit:
 
   Reek:
     enabled: true
+    flags: ['--single-line', '--no-color', '--force-exclusion']
 
   RuboCop:
     enabled: true
