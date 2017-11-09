@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :project do
-    user nil
+    user { create(:user) }
     title { Faker::Lorem.sentence }
   end
 end
