@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   include DeviseTokenAuth::Concerns::User
 
+  has_many :projects
+
   validates :email, uniqueness: { case_sensitive: false }
-  validates :password, length: { minimum: 8, maximum: 128 }
 end
