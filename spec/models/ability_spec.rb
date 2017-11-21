@@ -19,6 +19,20 @@ describe Ability do
       it { is_expected.not_to be_able_to(:update, another_project) }
       it { is_expected.not_to be_able_to(:destroy, another_project) }
     end
+
+    context 'for tasks' do
+      let(:task) { create(:task, project: project)}
+      let(:another_task) { create(:task, project: another_project)}
+
+      it { is_expected.to be_able_to(:read, task) }
+      it { is_expected.to be_able_to(:create, Task) }
+      it { is_expected.to be_able_to(:update, task) }
+      it { is_expected.to be_able_to(:destroy, task) }
+
+      it { is_expected.not_to be_able_to(:read, another_task) }
+      it { is_expected.not_to be_able_to(:update, another_task) }
+      it { is_expected.not_to be_able_to(:destroy, another_task) }
+    end
   end
 
   describe 'abilities of guest' do
@@ -33,6 +47,15 @@ describe Ability do
       it { is_expected.not_to be_able_to(:create, Project) }
       it { is_expected.not_to be_able_to(:update, project) }
       it { is_expected.not_to be_able_to(:destroy, project) }
+    end
+
+    context 'for tasks' do
+      let(:task) { create(:task, project: project) }
+
+      it { is_expected.not_to be_able_to(:read, task) }
+      it { is_expected.not_to be_able_to(:create, Task) }
+      it { is_expected.not_to be_able_to(:update, task) }
+      it { is_expected.not_to be_able_to(:destroy, task) }
     end
   end
 end
